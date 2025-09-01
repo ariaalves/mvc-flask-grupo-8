@@ -2,6 +2,7 @@ from flask import render_template, request, redirect, url_for
 from models.user import User, db
 
 class UserController:
+    # A chamada para esse método seria feita diretamente pela classe, sem a necessidade de criar um objeto (uma instância):
     @staticmethod
     def index():
         users = User.query.all()

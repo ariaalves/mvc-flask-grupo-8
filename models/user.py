@@ -8,4 +8,5 @@ class User(db.Model): # Declaração de um novo modelo/tabela: User
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
 
+    # define o nome da tabela no banco de dados para a classe User como "users", como boas práticas
     __tablename__ = 'users'
