@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Page</title>
-</head>
-<body>
-    <h1>Contact Page</h1>
+{% extends "index.html" %}
+
+{% block content %}
+    <h2>Cadastrar Usuário</h2>
 
     <form method="POST">
         <label for="name">Nome</label>
@@ -20,5 +15,4 @@
         <br/>
         <button type="submit">Cadastrar</button>
     </form>
-</body>
-</html>
+{% endblock %}

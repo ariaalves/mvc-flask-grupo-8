@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Page</title>
+    <title>Sistema de Usuários e Tarefas</title>
 </head>
 <body>
-    <h1>Index Page</h1>
+    <header>
+        <h1>Sistema de Usuários e Tarefas</h1>
+        <ul>
+            <li><a href="{{ url_for('list_users') }}">Usuários</a></li> 
+            <li><a href="{{ url_for('list_tasks') }}">Tarefas</a></li> 
+            <li><a href="{{ url_for('create_user') }}">Cadastrar Usuário</a></li> 
+            <li><a href="{{ url_for('create_task') }}">Cadastrar Tarefa</a></li>
+        </ul>
+        <hr>
+    </header>
 
-    <ul>
-        {% for user in users %}
-        <li>{{user.name}} - {{user.email}}</li>
-        {% endfor %}
-    </ul>
-    <a href="{{ url_for('contact') }}">Página de Cadastro</a>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 </body>
 </html>
