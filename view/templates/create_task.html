@@ -1,27 +1,38 @@
 {% extends "index.html" %}
+
 {% block content %}
-    <h2>Criar Nova Tarefa</h2>
+  <div class="card shadow-sm p-4">
+    <h2 class="mb-3">Criar Nova Tarefa</h2>
 
     <form method="POST">
-        <label for="title">Título:</label><br>
-        <input type="text" name="title" required><br><br>
+      <div class="mb-3">
+        <label for="title" class="form-label">Título</label>
+        <input type="text" name="title" id="title" class="form-control" required>
+      </div>
 
-        <label for="description">Descrição:</label><br>
-        <textarea name="description"></textarea><br><br>
+      <div class="mb-3">
+        <label for="description" class="form-label">Descrição</label>
+        <textarea name="description" id="description" class="form-control" rows="3"></textarea>
+      </div>
 
-        <label for="status">Status:</label><br>
-        <select name="status">
-            <option value="Pendente">Pendente</option>
-            <option value="Concluído">Concluído</option>
-        </select><br><br>
+      <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select name="status" id="status" class="form-select">
+          <option value="Pendente">Pendente</option>
+          <option value="Concluído">Concluído</option>
+        </select>
+      </div>
 
-        <label for="user_id">Usuário:</label><br>
-        <select name="user_id" required>
-            {% for user in users %}
-                <option value="{{ user.id }}">{{ user.name }}</option>
-            {% endfor %}
-        </select><br><br>
+      <div class="mb-3">
+        <label for="user_id" class="form-label">Usuário</label>
+        <select name="user_id" id="user_id" class="form-select" required>
+          {% for user in users %}
+            <option value="{{ user.id }}">{{user.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
 
-        <button type="submit">Criar</button>
+      <button type="submit" class="btn btn-primary">Criar Tarefa</button>
     </form>
+  </div>
 {% endblock %}

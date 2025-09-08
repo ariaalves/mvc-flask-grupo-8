@@ -1,18 +1,21 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <h2>Cadastrar Usuário</h2>
+  <div class="card shadow-sm p-4">
+    <h2 class="mb-3">Cadastrar Usuário</h2>
 
     <form method="POST">
-        <label for="name">Nome</label>
-        <input type="text" name="name" id="name" required>
+      <div class="mb-3">
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" name="name" id="name" class="form-control" required>
+      </div>
 
-        <br/>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" name="email" id="email" class="form-control" required>
+      </div>
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required>
-
-        <br/>
-        <button type="submit">Cadastrar</button>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
+  </div>
 {% endblock %}

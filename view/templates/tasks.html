@@ -25,12 +25,12 @@
         <td>{{ task.description }}</td>
         <td>
           {% if task.status == "Pendente" %}
-            <span class="badge bg-warning text-dark">{{ task.status }}</span>
+            <span class="badge bg-warning text-dark">{{task.status}}</span>
           {% else %}
-            <span class="badge bg-success">{{ task.status }}</span>
+            <span class="badge bg-success">{{task.status}}</span>
           {% endif %}
         </td>
-        <td>{{ task.user.name }}</td>
+        <td>{{task.user.name}}</td>
         <td>
           <form action="{{ url_for('update_task_status', task_id=task.id) }}" method="post" class="d-inline">
             <button type="submit" class="btn btn-sm btn-primary">Concluir</button>
